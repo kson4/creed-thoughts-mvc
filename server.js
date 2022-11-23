@@ -20,26 +20,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", mainRoutes);
 app.use("/post/", postRoutes);
 
-// app.get("/", (req, res) => {
-//   db.collection("posts")
-//     .find()
-//     .toArray()
-//     .then((posts) => {
-//       const featured = posts.filter((post) => post.featured === true);
-//       res.render("index.ejs", { posts: posts, featured: featured });
-//     });
-// });
-
-// app.get("/post/:id", (req, res) => {
-//   const obj = new mongoDB.ObjectId(req.params.id);
-
-//   db.collection("posts")
-//     .findOne({ _id: obj })
-//     .then((post) => {
-//       res.render("post.ejs", { post: post });
-//     });
-// });
-
 app.listen(process.env.PORT, () => {
   console.log("Server is running. You better go catch it!");
 });

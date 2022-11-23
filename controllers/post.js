@@ -12,13 +12,3 @@ module.exports = {
     }
   },
 };
-
-// app.get("/post/:id", (req, res) => {
-//   const obj = new mongoDB.ObjectId(req.params.id);
-
-//   db.collection("posts")
-//     .findOne({ _id: obj })
-//     .then((post) => {
-//       res.render("post.ejs", { post: post });
-//     });
-// });

@@ -5,7 +5,12 @@ module.exports = {
     try {
       const posts = await Post.find();
       const featured = await Post.find({ featured: true });
-      res.render("index.ejs", { posts: posts, featured: featured });
+      const finance = await Post.find({ category: { $in: "Finance" } });
+      res.render("index.ejs", {
+        posts: posts,
+        featured: featured,
+        finance: finance,
+      });
     } catch (err) {
       console.error(err);
     }
