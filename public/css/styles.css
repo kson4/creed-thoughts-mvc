@@ -8,7 +8,7 @@ h1 {
 }
 h2 {
   font-size: 2rem;
-  color: #3282B8;
+  color: #3282b8;
   height: 0.07rem;
 }
 h3 {
@@ -26,7 +26,7 @@ h4 {
 h6 {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #0F4C75;
+  color: #0f4c75;
 }
 p {
   font-size: 1rem;
@@ -34,7 +34,7 @@ p {
   line-height: 1.5rem;
 }
 button {
-  background: #0F4C75;
+  background: #0f4c75;
   border-style: none;
   padding: 0.7rem 1.3rem;
   font-size: 0.9rem;
@@ -49,30 +49,31 @@ hr {
 }
 body {
   font-family: "Open Sans", sans-serif;
-  border: 1px solid red;
-  width: 1920px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 25px;
 }
 
 nav {
-  background-color: #3282B8;
+  background-color: #3282b8;
 }
 .eff::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #0F4C75;
+  background: #0f4c75;
   transition: width 0.3s;
 }
 .eff:hover::after {
   width: 60%;
   height: 2px;
   height: 2px;
-  background: #0F4C75;
+  background: #0f4c75;
   transition: width 0.3s;
-  border-bottom:2px solid #0F4C75;
+  border-bottom: 2px solid #0f4c75;
 }
-
 
 header {
   background-color: #a9a9a9;
@@ -94,7 +95,7 @@ header {
   object-fit: cover;
 }
 .featured .row .one .text {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   position: relative;
@@ -115,20 +116,20 @@ header {
   display: block;
   width: 30%;
   height: 2px;
-  background: #0F4C75;
+  background: #0f4c75;
 }
 
 .subscription {
-  background-color: #3282B8;
+  background-color: #3282b8;
 }
 .subscription div .sub input {
   outline: none;
-  border: 1px solid #0F4C75;
+  border: 1px solid #0f4c75;
 }
 
 .blog .row .post a {
   font-size: 0.9rem;
-  color: #3282B8;
+  color: #3282b8;
   font-weight: bold;
   text-decoration: none;
   border-style: none;
@@ -140,7 +141,7 @@ header {
 .blog .row .sidebar .side2 .row .sidetext a {
   text-decoration: none;
   border-style: none;
-  color: #3282B8;
+  color: #3282b8;
   font-size: 0.8rem;
 }
 
