@@ -80,7 +80,7 @@
     </div>
 
     <header class="d-flex justify-content-center align-items-center w-100">
-      <img class="header-img pe-5" src="img/cb-header.jpg" />
+      <img class="header-img pe-5" src="https://res.cloudinary.com/dg6x4qldl/image/upload/v1669221140/creed-thoughts/cb-header_yvo2ia.jpg" />
       <div class="d-flex flex-column justify-content-center align-items-center">
         <h1>Creed Thoughts</h1>
         <hr class="w-50" />
@@ -92,7 +92,7 @@
       <div class="row">
         <% for(let i = 0; i < featured.length; i++) {%>
           <div class="one col-lg-4 col-md-6 col-12">
-            <img class="img-fluid" src=/img/<%= featured[i].img %> />
+            <img class="img-fluid" src=<%= featured[i].img %> />
             <div class="text w-75 h-50 text-light p-4">
               <p><%=featured[i].category[0] %></p>
               <h4><%= featured[i].title %></h4>
@@ -127,7 +127,7 @@
           <div class="row">
             <% for(let i = 0; i < posts.length; i++) {%>
             <div class="post1 col-lg-6 col-md-6 col-12 pb-4">
-              <img class="img-fluid pb-3" src=img/<%=posts[i].img%> />
+              <img class="img-fluid pb-3" src=<%= posts[i].img %> />
               <h3><%= posts[i].title %></h3>
               <p><%= posts[i].content.slice(0, 100) + "..." %></p>
               <a href=/post/<%= posts[i]._id %>>READ MORE</a>

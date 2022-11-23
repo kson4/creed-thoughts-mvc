@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
+const postRoutes = require("./routes/post");
 require("dotenv").config({ path: "./config/.env" });
 
 connectDB();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", mainRoutes);
+app.use("/post/", postRoutes);
 
 // app.get("/", (req, res) => {
 //   db.collection("posts")

@@ -5,8 +5,6 @@ module.exports = {
     try {
       const posts = await Post.find();
       const featured = await Post.find({ featured: true });
-      // console.log(posts);
-      // console.log(featured);
       res.render("index.ejs", { posts: posts, featured: featured });
     } catch (err) {
       console.error(err);
