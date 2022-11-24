@@ -17,20 +17,40 @@
     <div
       class="contact d-flex align-items-center justify-content-center h-100 flex-column"
     >
-      <h1>Contact Me</h1>
       <div
         class="row d-flex align-items-center justify-content-center h-50 w-75 p-5"
       >
-        <div class="col">
-          <img
+        <div class="col text-center">
+          <!-- <img
             class="header-img pe-5 img-fluid"
             src="https://i.imgur.com/R4mbvs9.png"
-          />
+          /> -->
+          <h1>Contact Me</h1>
+          <h4>But before that, please confirm that you are not a:</h4>
+          <div class="d-flex flex-column align-items-end w-75">
+            <div>
+              <label for="narc">Narcotics Officer</label>
+              <input type="checkbox" name="narc" />
+            </div>
+            <div>
+              <label for="gov">Government Official</label>
+              <input type="checkbox" name="gov" />
+            </div>
+            <div>
+              <label for="fbi">Federal Bureau of Investigation Officer</label>
+              <input type="checkbox" name="fbi" />
+            </div>
+            <div>
+              <label for="hr">Human Resources Representative</label>
+              <input type="checkbox" name="hr" />
+            </div>
+          </div>
+          <button class="contact-btn btn mt-4">I Agree</button>
         </div>
         <div class="col">
           <form class="contact-form">
             <div class="form-group">
-              <label>Full Name</label>
+              <label class="mb-1">Full Name</label>
               <input
                 type="text"
                 class="form-control mb-3 contact-input"
@@ -39,7 +59,7 @@
               />
             </div>
             <div class="form-group">
-              <label>Email Address</label>
+              <label class="mb-1">Email Address</label>
               <input
                 type="email"
                 class="form-control mb-3"
@@ -48,7 +68,7 @@
               />
             </div>
             <div class="form-group">
-              <label>Phone Number</label>
+              <label class="mb-1">Phone Number</label>
               <input
                 type="text"
                 class="form-control mb-3"
@@ -57,12 +77,15 @@
               />
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Message</label>
+              <label class="mb-1">Message</label>
               <textarea
                 class="form-control mb-3"
                 name="message"
                 rows="3"
               ></textarea>
+            </div>
+            <div class="text-center">
+              <button class="contact-btn btn" type="submit">Submit</button>
             </div>
           </form>
         </div>

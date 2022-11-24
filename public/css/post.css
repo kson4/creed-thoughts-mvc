@@ -8,13 +8,23 @@ body {
 }
 
 .contact > div {
-  border-radius: 20px;
-  border: 1px solid red;
+  border-radius: 40px;
+  background-color: #a9a9a9;
 }
-
+.contact .row .col h1 {
+  color: #0f4c75;
+}
+.contact .row .col .contact-form .form-group label {
+  color: #0f4c75;
+  font-weight: bold;
+}
 .contact .row .col .contact-form .form-group input {
   border-radius: 20px;
 }
 .contact .row .col .contact-form .form-group textarea {
   border-radius: 20px;
+}
+.contact-btn {
+  background-color: #0f4c75;
+  color: #fff;
 }
