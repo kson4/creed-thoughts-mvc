@@ -6,10 +6,14 @@ body {
   width: 100vw;
   padding-top: 15px;
 }
-
-.contact > div {
+.contact {
+  background-image: url(https://eder6ypjvgv.exactdn.com/wp-content/uploads/2021/10/4829523955_17f5273c9a_k.jpg?strip=all&lossy=1&resize=1280%2C650&ssl=1);
+  background-size: cover;
+}
+.contact div {
   border-radius: 40px;
   background-color: #a9a9a9;
+  opacity: 1;
 }
 .contact .row .col h1 {
   color: #0f4c75;
@@ -27,4 +31,22 @@ body {
 .contact-btn {
   background-color: #0f4c75;
   color: #fff;
+}
+.contact-btn:hover {
+  background-color: #0f4c75 !important;
+  color: #fff !important;
+}
+/* .contact-form .form-group,
+.contact-form button {
+  visibility: hidden;
+} */
+.contact-form-container {
+  background-color: rgba(27, 25, 25, 0.2) !important;
+  background: url("https://res.cloudinary.com/dg6x4qldl/image/upload/c_scale,w_250/v1669306554/icons/lock_qgnyrp.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  visibility: visible;
+}
+.contact-form {
+  visibility: hidden;
 }

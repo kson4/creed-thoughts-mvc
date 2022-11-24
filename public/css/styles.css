@@ -112,13 +112,13 @@ header {
   color: #fff;
   font-size: 0.9rem;
 }
-.featured .row .one .text h4::after {
+/* .featured .row .one .text h4::after {
   content: "";
   display: block;
   width: 30%;
   height: 2px;
-  background: #0f4c75;
-}
+  background: #08283d;
+} */
 
 .subscription {
   background-color: #3282b8;

@@ -1,4 +1,3 @@
-const mongoDB = require("mongodb");
 const Post = require("../models/Post");
 
 module.exports = {

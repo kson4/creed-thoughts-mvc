@@ -21,73 +21,71 @@
         class="row d-flex align-items-center justify-content-center h-50 w-75 p-5"
       >
         <div class="col text-center">
-          <!-- <img
-            class="header-img pe-5 img-fluid"
-            src="https://i.imgur.com/R4mbvs9.png"
-          /> -->
           <h1>Contact Me</h1>
           <h4>But before that, please confirm that you are not a:</h4>
           <div class="d-flex flex-column align-items-end w-75">
             <div>
               <label for="narc">Narcotics Officer</label>
-              <input type="checkbox" name="narc" />
+              <input type="checkbox" name="narc" id="contact-form-1" />
             </div>
             <div>
               <label for="gov">Government Official</label>
-              <input type="checkbox" name="gov" />
+              <input type="checkbox" name="gov" id="contact-form-2" />
             </div>
             <div>
               <label for="fbi">Federal Bureau of Investigation Officer</label>
-              <input type="checkbox" name="fbi" />
+              <input type="checkbox" name="fbi" id="contact-form-3" />
             </div>
             <div>
               <label for="hr">Human Resources Representative</label>
-              <input type="checkbox" name="hr" />
+              <input type="checkbox" name="hr" id="contact-form-4" />
             </div>
           </div>
-          <button class="contact-btn btn mt-4">I Agree</button>
+          <button class="contact-btn btn mt-4 condition-agree">I Agree</button>
         </div>
         <div class="col">
-          <form class="contact-form">
-            <div class="form-group">
-              <label class="mb-1">Full Name</label>
-              <input
-                type="text"
-                class="form-control mb-3 contact-input"
-                placeholder="John Smith"
-                name="name"
-              />
-            </div>
-            <div class="form-group">
-              <label class="mb-1">Email Address</label>
-              <input
-                type="email"
-                class="form-control mb-3"
-                placeholder="name@example.com"
-                name="email"
-              />
-            </div>
-            <div class="form-group">
-              <label class="mb-1">Phone Number</label>
-              <input
-                type="text"
-                class="form-control mb-3"
-                name="phone"
-                placeholder="123-456-7890"
-              />
-            </div>
-            <div class="form-group">
-              <label class="mb-1">Message</label>
-              <textarea
-                class="form-control mb-3"
-                name="message"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="text-center">
-              <button class="contact-btn btn" type="submit">Submit</button>
-            </div>
-          </form>
+          <div class="p-5 contact-form-container">
+            <form class="contact-form" action="/contact/sendMsg" method="POST">
+              <div class="form-group">
+                <label class="mb-1">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control mb-3 contact-input"
+                  placeholder="John Smith"
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="mb-1">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control mb-3"
+                  placeholder="name@example.com"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <label class="mb-1">Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  name="phone"
+                  placeholder="123-456-7890"
+                />
+              </div>
+              <div class="form-group">
+                <label class="mb-1">Message</label>
+                <textarea
+                  class="form-control mb-3"
+                  name="message"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button class="contact-btn btn" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -97,5 +95,6 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>
