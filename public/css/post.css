@@ -30,6 +30,13 @@ button {
 .side-widget {
   margin-top: 5%;
 }
+.sidetext a {
+  font-size: 0.9rem;
+  color: #3282b8;
+  font-weight: bold;
+  text-decoration: none;
+  border-style: none;
+}
 .contact {
   background-image: url(https://eder6ypjvgv.exactdn.com/wp-content/uploads/2021/10/4829523955_17f5273c9a_k.jpg?strip=all&lossy=1&resize=1280%2C650&ssl=1);
   background-size: cover;
