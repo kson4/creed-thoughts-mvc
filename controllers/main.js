@@ -3,7 +3,7 @@ const Post = require("../models/Post");
 module.exports = {
   homePage: async (req, res) => {
     try {
-      const posts = await Post.find();
+      const posts = await Post.find().sort({ date: "descending" });
       const featured = await Post.find({ featured: true });
       const finance = await Post.find({ category: { $in: "Finance" } });
       res.render("index.ejs", {

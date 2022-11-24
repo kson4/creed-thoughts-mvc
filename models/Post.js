@@ -10,7 +10,7 @@ const PostSchema = new mongoose.Schema({
     default: () => Date.now(),
   },
   content: {
-    type: String,
+    type: Array,
     required: true,
   },
   featured: {
