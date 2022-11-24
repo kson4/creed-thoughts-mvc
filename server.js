@@ -9,6 +9,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/post");
 const uploadRoutes = require("./routes/upload");
+const contactRoutes = require("./routes/contact");
 require("dotenv").config({ path: "./config/.env" });
 
 connectDB();
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/upload", uploadRoutes);
+app.use("/contact", contactRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running. You better go catch it!");

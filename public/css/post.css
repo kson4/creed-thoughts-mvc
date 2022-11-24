@@ -2,5 +2,19 @@ nav {
   background-color: #3282b8;
 }
 body {
+  height: 100vh;
+  width: 100vw;
   padding-top: 15px;
+}
+
+.contact > div {
+  border-radius: 20px;
+  border: 1px solid red;
+}
+
+.contact .row .col .contact-form .form-group input {
+  border-radius: 20px;
+}
+.contact .row .col .contact-form .form-group textarea {
+  border-radius: 20px;
 }

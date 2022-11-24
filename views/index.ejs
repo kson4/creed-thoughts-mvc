@@ -33,15 +33,18 @@
 
     <section class="featured container my-5">
       <div class="row">
-        <% for(let i = 0; i < 2; i++) {%>
-          <div class="one col-lg-4 col-md-6 col-12">
-            <img class="img-fluid" src=<%= featured[i].img %> />
-            <div class="text w-75 h-50 text-light p-4">
-              <p><%=featured[i].category[0] %></p>
-              <h4><%= featured[i].title %></h4>
-              <a href=/post/<%= posts[i]._id %>>LINK</a>
+        <% for(let i = 0; i < 3; i++) {%>
+          
+            <div class="one col-lg-4 col-md-6 col-12">
+              <a href=/post/<%= featured[i]._id %>>
+                <img class="img-fluid" src=<%= featured[i].img %> />
+                <div class="text w-75 h-50 text-light p-4">
+                  <p><%=featured[i].category[0] %></p>
+                  <h4><%= featured[i].title %></h4>
+                </div>
+              </a>
             </div>
-          </div>
+          
         <% } %>
     </section>
 
@@ -68,12 +71,12 @@
       <div class="row">
         <div class="post col-lg-8 col-md-8 col-12">
           <div class="row">
-            <% for(let i = 1; i < posts.length; i++) {%>
+            <% for(let i = 1; i < nonfeatured.length; i++) {%>
             <div class="post1 col-lg-6 col-md-6 col-12 pb-4">
               <img class="img-fluid pb-3" src=<%= posts[i].img %> />
-              <h3><%= posts[i].title %></h3>
-              <p><%= posts[i].content[0].slice(0, 100) + "..." %></p>
-              <a href=/post/<%= posts[i]._id %>>READ MORE</a>
+              <h3><%= nonfeatured[i].title %></h3>
+              <p><%= nonfeatured[i].content[0].slice(0, 100) + "..." %></p>
+              <a href=/post/<%= nonfeatured[i]._id %>>READ MORE</a>
             </div>
             <% } %>
           </div>
@@ -88,7 +91,7 @@
               <p>
                 <%= posts[0].content[0].slice(0, 100) + "..." %>
               </p>
-              <a href=/post/<%= posts[0]._id %>>READ MORE</a>
+              <a class="text-decoration-none" href=/post/<%= posts[0]._id %>>READ MORE</a>
             </div>
           </div>
           <div class="side2">

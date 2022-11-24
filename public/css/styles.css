@@ -47,6 +47,7 @@ hr {
   color: #BBE1FA; */
   height: 0.7rem;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -111,7 +112,7 @@ header {
   color: #fff;
   font-size: 0.9rem;
 }
-.featured .row .one .text a::after {
+.featured .row .one .text h4::after {
   content: "";
   display: block;
   width: 30%;
