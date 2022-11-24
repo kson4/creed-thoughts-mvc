@@ -51,8 +51,8 @@
     <section class="subscription p-5 m-5">
       <div class="d-flex justify-content-between align-items-center text-light">
         <div class="content">
-          <h4>Want to Sign Up for Weekly Creed Thoughts?</h4>
-          <p>Sign up and recieve your first email immediately</p>
+          <h4>Want to Sign Up For More Weekly Creed Thoughts?</h4>
+          <p>Sign up and receive your first email immediately</p>
         </div>
         <div class="sub">
           <input
@@ -94,22 +94,7 @@
               <a class="text-decoration-none" href=/post/<%= posts[0]._id %>>READ MORE</a>
             </div>
           </div>
-          <div class="side2">
-            <h3 class="pb-3">Top Reads</h3>
-            <h4>Finance</h4>
-            <hr class="w-50" />
-            <% for(let i = 0; i < finance.length && i < 3; i++) { %>
-              <div class="row pb-3">
-                <div class="sideimg col-lg-4 col-md-4 col-4">
-                  <img class="img-fluid" src=<%= finance[i].img %> />
-                </div>
-                <div class="sidetext col-lg-8 col-md-8 col-8">
-                  <h4><%= finance[i].title %></h4>
-                  <a href="#">READ MORE</a>
-                </div>
-              </div>
-            <% } %>
-          </div>
+          <%- include("./partials/side-widget.ejs") %>
         </div>
       </div>
     </section>

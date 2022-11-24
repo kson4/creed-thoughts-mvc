@@ -10,12 +10,20 @@ module.exports = {
       const featured = await Post.find({ featured: true }).sort({
         date: "descending",
       });
-      const finance = await Post.find({ category: { $in: "Finance" } });
+      const finance = await Post.find({ category: { $in: "Finance" } }).sort({
+        date: "descending",
+      });
+      const justThoughts = await Post.find({
+        category: { $in: "Just-Thoughts" },
+      }).sort({
+        date: "descending",
+      });
       res.render("index.ejs", {
         posts: posts,
         nonfeatured: nonfeatured,
         featured: featured,
         finance: finance,
+        justThoughts: justThoughts,
       });
     } catch (err) {
       console.error(err);
