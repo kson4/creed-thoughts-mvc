@@ -1,4 +1,6 @@
+const bcrypt = require("bcrypt");
 const Post = require("../models/Post");
+const User = require("../models/User");
 
 module.exports = {
   homePage: async (req, res) => {
@@ -27,6 +29,27 @@ module.exports = {
       });
     } catch (err) {
       console.error(err);
+    }
+  },
+  login: async (req, res) => {},
+  signup: async (req, res) => {
+    const users = await User.find({});
+    console.log(users);
+
+    console.log(req.body);
+    try {
+      const hash = await bcrypt.hash(req.body.signupPassword, 10);
+      const user = await User.create({
+        firstName: req.body.signupFirstName,
+        lastName: req.body.signupLastName,
+        email: req.body.signupEmail,
+        password: hash,
+      });
+      console.log(user);
+      res.redirect("/");
+    } catch (err) {
+      console.error(err);
+      res.redirect("/");
     }
   },
 };
