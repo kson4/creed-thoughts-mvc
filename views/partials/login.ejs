@@ -5,14 +5,16 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="/login" method="GET">
+      <form id="login-form">
         <div class="mb-3 ps-4 pe-4 pt-4">
-          <label for="loginEmail" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="loginEmail">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email">
+          <div class="l-email-error"></div>
         </div>
         <div class="mb-3 ps-4 pe-4 pb-4">
-          <label for="loginPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" name="loginPassword">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password">
+          <div class="l-password-error"></div>
         </div>
         <div class="text-center pb-5">
           <button type="submit">LOGIN</button>
@@ -21,3 +23,36 @@
     </div>
   </div>
 </div>
+
+<script>
+  const loginForm = document.querySelector("#login-form");
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const emailError = document.querySelector(".l-email-error");
+    const passwordError = document.querySelector(".l-password-error");
+
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    const email = loginForm.email.value;
+    const password = loginForm.password.value;
+    try {
+      const res = await fetch("/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      if (data.errors) {
+        emailError.textContent = data.errors.email;
+        passwordError.textContent = data.errors.password;
+      }
+      if (data.user) {
+        location.reload();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  });
+</script>

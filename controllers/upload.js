@@ -2,7 +2,7 @@ const Post = require("../models/Post");
 
 module.exports = {
   show: async (req, res) => {
-    res.render("create-post.ejs");
+    res.render("upload.ejs");
   },
   createPost: async (req, res) => {
     const categoryArray = req.body.category.trim().split(/\s+/);

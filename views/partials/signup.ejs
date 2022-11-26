@@ -5,24 +5,28 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="/signup" method="POST">
+      <form id="signup-form">
         <div class="row ps-4 pe-4 pt-4">
           <div class="col">
-            <label for="signupFirstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" name="signupFirstName">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstName">
+            <div class="s-firstName-error"></div>
           </div>
           <div class="col">
-            <label for="signupLastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" name="signupLastName">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="lastName">
+            <div class="s-lastName-error"></div>
           </div>
         </div>
         <div class="mb-3 ps-4 pe-4 pt-4">
-          <label for="signupEmail" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="signupEmail">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email">
+          <div class="s-email-error"></div>
         </div>
         <div class="mb-3 ps-4 pe-4 pb-4">
-          <label for="signupPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" name="signupPassword">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password">
+          <div class="s-password-error"></div>
         </div>
         <div class="text-center pb-5">
           <button type="submit">SIGN UP</button>
@@ -31,3 +35,44 @@
     </div>
   </div>
 </div>
+
+<script>
+  const form = document.querySelector("#signup-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const firstNameError = document.querySelector(".s-firstName-error");
+    const lastNameError = document.querySelector(".s-lastName-error");
+    const emailError = document.querySelector(".s-email-error");
+    const passwordError = document.querySelector(".s-password-error");
+
+    firstNameError.textContent = "";
+    lastNameError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    try {
+      const res = await fetch("/signup", {
+        method: "POST",
+        body: JSON.stringify({ firstName, lastName, email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      if (data.errors) {
+        firstNameError.textContent = data.errors.firstName;
+        lastNameError.textContent = data.errors.lastName;
+        emailError.textContent = data.errors.email;
+        passwordError.textContent = data.errors.password;
+      }
+      if (data.user) {
+        location.reload();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  });
+</script>

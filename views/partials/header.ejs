@@ -11,14 +11,16 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
           <li class="nav-item">
-            <a class="nav-link active eff" aria-current="page" href="/upload">
-              New Post
-            </a>
+            <% if(user && user.email === "davidson@gmail.com") { %>
+              <a class="nav-link active eff" aria-current="page" href="/upload">
+                New Post
+              </a>
+            <% } %>
           </li>
           <li class="nav-item">
             <a class="nav-link active me-3 eff" href="/contact"
@@ -36,13 +38,25 @@
           <button type="submit">SEARCH</button>
         </form>
       </div>
+      
       <div class="ms-5">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#loginForm">
-          LOGIN
-        </button>
-        <button type="button" class="ms-2" data-bs-toggle="modal" data-bs-target="#signupForm">
-          SIGN UP
-        </button>
+        <% if (!user) { %>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#loginForm">
+            LOGIN
+          </button>
+          <button type="button" class="ms-2 signup-btn" data-bs-toggle="modal" data-bs-target="#signupForm">
+            SIGN UP
+          </button>
+        <% } else { %>
+          <div class="d-flex align-items-center">
+            <h4 class="pt-1 pe-3"><%= user.firstName %> <%= user.lastName %></h4>
+            <a href="/logout">
+              <button type="button" class="ms-2 signup-btn">
+                LOG OUT
+              </button>
+            </a>
+          </div>
+        <% } %>
       </div>
     </div>
   </nav>
