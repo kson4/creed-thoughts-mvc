@@ -81,3 +81,7 @@ button {
 .contact-form {
   visibility: hidden;
 }
+
+.post-container {
+  min-height: 100vh;
+}
